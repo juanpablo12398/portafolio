@@ -1,0 +1,142 @@
+Usando margin, vamos a hacer que esten mas centrados o centrados no tan raro.
+y con el justify content vamos a separar los elementos de mi body
+
+.presentacion {
+    display: flex;
+    align-items: center;
+    margin: 6%;
+    justify-content: space-between;
+}
+
+-----------
+
+Vamos a cambiar las fuentes del proyecto
+Usando el <section class="presentacion__contenido">
+esa etiqueta sirve para dvidiri el body en partes 
+por ejemplo ahora quiero tocar todo la fuente de lo que esta dentro del rectanculo que tiene 
+el titulo el parrafo y los botones, entonces dentro del section pongo todo eso y le doy una clase
+para darle un formato dentro de css
+
+.presentacion__contenido__titulo{
+    font-size: 36px;
+    // Px es pixeles
+}
+
+font size nos permite colocar el tamanio de la fuente
+
+''''''''''''''''''''''
+div, esta etiqueta nos sirve para hacer una division en el codigo
+La etiqueta <div> define una división en un documento HTML y suele utilizarse como un contenedor
+para otros elementos, lo que ayuda en la estilización del bloque. Por este motivo, 
+la <div> se utiliza frecuentemente cuando necesitamos agrupar elementos sin usar las etiquetas semánticas 
+de HTML. Esto se debe a que la <div> no tiene valor semántico. Por lo tanto, no significa nada para los 
+navegadores y motores de búsqueda.
+
+Además, al ser muy utilizada para agrupar elementos, facilita la organización de la información 
+en los diseños. De esta forma, puede ser formateada y manipulada orgánicamente a través de CSS. 
+Por lo general, s
+e acompaña de atributos de ID y clase para facilitar esta organización y formateo.
+
+text-align: center; te alinea las palabras dentro de una etiqueta.
+padding: 21.5px 0px; es Relleno, y el primer valor es la altura, y el segundo es la anchura.
+
+font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: none;
+
+De esta manera le decimos a Montserrat que es la fuente, el tipo que quiero que en este caso 
+es semiBold y se accede dependiendo del weight (Lo podes ver dentro de la pagina de google de fonts)
+
+text-decoration: none;
+eso es para sacar el subrayado de los enlaces
+
+margin: 10% 15%;
+Funciona igual que el paddin, el primero es para la altura o la parte vertical, y la otra es para la horizontal
+
+.presentacion__contenido {
+    width: 615px;
+    display: flex;
+}
+Esto te rompe todo, en un sentido que queda todo alineado como linea 
+Pero usando: flex direction; colum 
+.presentacion__contenido {
+    width: 615px;
+    display: flex;
+    flex-direction: column;
+}
+
+Lo ordena en columnas
+pero con esto ya podemos usar una propiedad que es gap, que da un espacio entre los elementos de la seccion
+
+-----
+
+.presentacion__enlaces {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+SI yo uso un cambio de direccion de flex, en ves de poner todo en filas, lo hace en columnas
+De manera que para centrar los items, tengo que usar el aling items, no el justify-content center
+como cuando esta en filas 
+
+border: 2px solid #22D4FD;
+    border-radius: 8;
+
+el border, define el ancho del border que es de dos pixeles, el tipo que es solid y su color y con el radius
+el radio del borde
+
+------------
+</nav> es una etiqueta de navegacion.
+La etiqueta <nav> debe ser utilizada solo para enlaces que sean importantes para la navegación, 
+por lo tanto, los enlaces comunes deben estar en el cuerpo de la página o en el <footer>, 
+que generalmente contiene 
+enlaces relacionados con el contenido de la página pero que no son esenciales para la navegación.
+
+padding-top
+padding-right
+padding-bottom
+padding-left
+
+o podes poner padding y padding: 2% 0% 0% ; si son dos es de arriba y de la isquierda
+
+Maner de crear variable dentor de css
+:root {
+  --main-bg-color: brown;
+}
+Esto lo hacemos para no tener que cambiar algo que se repite en nuestro codigo uno por uno
+
+---------------
+
+El px es una medida absoluta, es fija, demanera que no se puede redimensionar si quiero aumentar la fuente 
+del navegador 
+
+Utilizamos la unidad de medida Rem en remplazo de pixeles en font-size, para que pueda dimensionarse 
+cuando hacemos zoom sobre las fuentes.
+
+Cuando redimensionamos algo en otros dispositivos por ejemplo un iphone:
+.presentacion__imagen{
+    width: 50%;
+}
+Y tenemos que redimensionar a su ves todos los elementos se usa el widht, en cada clase 
+con un porcentaje, de los pixeles usados por el body o donde se encuentren
+
+Imagina que estás desarrollando un sitio web personal para mostrar tu portafolio de fotografía. Quieres que las imágenes se muestren de manera elegante en cualquier dispositivo, ocupando siempre la mitad del ancho de la pantalla para no sobrecargar visualmente al visitante, pero sin perder calidad. La elección de la unidad de medida es crucial para alcanzar este objetivo de responsividad.
+
+¿Cuál es la unidad de medida y el valor más adecuados para definir el ancho de una imagen de modo que ocupe, de manera adaptable, la mitad del tamaño de la pantalla?
+
+Alternativa correta
+width: 50 %;
+
+
+La unidad de medida porcentual (%) se adapta al tamaño del elemento padre, en este caso, la pantalla. Establecer width: 50%; hace que la imagen ocupe la mitad del ancho de la pantalla, independientemente del tamaño del dispositivo, cumpliendo con el objetivo de responsividad.
+
+''''''''''''''''''''
+
+@media (max-width: 1250px) {
+  /* … */
+}
+Lo que haces con eso es que cuando tenga 1250 pixeles la pantalla tenga un determinado comportamiento el disenio
+
+flex-direction: column-reverse; Lo que hace es invertir los elementos de la columna
